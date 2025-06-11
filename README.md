@@ -7,6 +7,9 @@ Players are shown a masked silhouette of a random Pokémon and must guess its na
 
 **[PokeShade](https://poke-shade.streamlit.app/)**
 
+| <img src="sample_image/1.png" height="250"/> | <img src="sample_image/2.png" height="250"/> | <img src="sample_image/3.png" height="250"/> |
+| :------------------------------------------: | :------------------------------------------: | :------------------------------------------: |
+
 ## Features
 
 - Randomly selects a Pokémon from the first 151 (Kanto region).
