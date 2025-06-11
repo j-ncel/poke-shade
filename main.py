@@ -31,7 +31,7 @@ def main():
     _, center_col, _ = st.columns(3)
     with center_col:
         with st.container(border=True):
-            _, center_col, _ = st.columns([1, 8, 1])
+            _, center_col, _ = st.columns([1, 10, 1])
             with center_col:
                 whos_that = st.markdown("<h2 style='font-family: Luckiest Guy; color: #4E92CF;'>Who's That Pokémon?</h2>",
                                         unsafe_allow_html=True)
@@ -41,7 +41,7 @@ def main():
                     pokemon_masked_img, width=500)
 
             result_placeholder = st.empty()
-            hint_button_col, hint_col = st.columns([1, 4.5])
+            hint_button_col, hint_col = st.columns([1, 4])
             hint_button = hint_button_col.button("Show Hint")
             if hint_button:
                 try:
