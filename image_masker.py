@@ -11,8 +11,8 @@ def mask_image(image_url):
     for item in data:
         # If pixel is not transparent
         if item[3] > 0:
-            new_data.append((0, 0, 0, 255))  # Black
+            new_data.append((28, 59, 89, 255))  # Blue
         else:
-            new_data.append((255, 255, 255, 255))  # White
+            new_data.append((14, 17, 23, 1))  # Black
     image.putdata(new_data)
     return image, orig_image
