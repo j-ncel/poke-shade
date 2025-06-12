@@ -1,10 +1,18 @@
+import streamlit as st
 from PIL import Image
 import requests
+from io import BytesIO
+
+
+@st.cache_data
+def fetch_image_bytes(image_url):
+    response = requests.get(image_url)
+    return response.content
 
 
 def mask_image(image_url):
-    orig_image = Image.open(requests.get(
-        image_url, stream=True).raw).convert("RGBA")
+    img_bytes = fetch_image_bytes(image_url)
+    orig_image = Image.open(BytesIO(img_bytes)).convert("RGBA")
     image = orig_image.copy()
     data = image.getdata()
     new_data = []

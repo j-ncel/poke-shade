@@ -7,17 +7,19 @@ Players are shown a masked silhouette of a random Pokémon and must guess its na
 
 **[PokeShade](https://poke-shade.streamlit.app/)**
 
-| <img src="sample_image/1.png" height="250"/> | <img src="sample_image/2.png" height="250"/> | <img src="sample_image/3.png" height="250"/> |
-| :------------------------------------------: | :------------------------------------------: | :------------------------------------------: |
+| <img src="sample_image/1.png" height="250"/> | <img src="sample_image/2.png" height="250"/> |
+| :------------------------------------------: | :------------------------------------------: |
 
 ## Features
 
 - Randomly selects a Pokémon from the first 151 (Kanto region).
 - Displays a masked (silhouette) image of the Pokémon.
-- Accepts user guesses and provides feedback.
 - Option to show a hint.
+- Multiple choices for answer selection.
 - Reveals the answer and original image after each guess.
 - Avoids repeating Pokémon in a single session.
+- Display counts of correct and incorrect guess and correct guess rate.
+- Display guessed Pokémon pictures.
 
 ## Project Structure
 
@@ -27,10 +29,9 @@ pokeshade/
 ├── main.py              # Streamlit UI and game logic.
 ├── pokemon_fetcher.py   # Fetches Pokémon data (name, image, hints) from PokéAPI.
 ├── image_masker.py      # Masked image from Pokémon image.
-├── sample_image/        # Sample images of the
+├── sample_image/        # Sample images of UI
 │   ├── 1.png
 │   ├── 2.png
-│   └── 3.png
 └── README.md            # Project documentation
 ```
 
@@ -39,7 +40,7 @@ pokeshade/
 ## How it Works
 
 - **main.py**: Handles the Streamlit UI, user input, and game flow.
-- **pokemon_fetcher.py**: Fetches Pokemon data from the PokéAPI, manages session state for already-shown Pokemon.
+- **pokemon_fetcher.py**: Fetches Pokemon data from the PokéAPI.
 - **image_masker.py**: Masks the Pokemon image to create a silhouette effect, also return the original image.
 
 ---

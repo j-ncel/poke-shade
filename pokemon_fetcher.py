@@ -3,11 +3,12 @@ import random
 import re
 import streamlit as st
 
+
 def get_pokemon():
     # Get all valid Pokemon IDs that haven't been shown yet in this session
-    valid_pokemon_ids = [i for i in range(
-        1, 151) if i not in st.session_state.get("given_pokemon_list", [])]
-    # Randomly select one Pokémon ID from the remaining pool
+    shown_ids = [entry["id"]
+                 for entry in st.session_state.get("given_pokemons", [])]
+    valid_pokemon_ids = [i for i in range(1, 152) if i not in shown_ids]
     random_pokemon_id = random.choice(valid_pokemon_ids)
 
     # Fetch Pokemon data
@@ -28,11 +29,24 @@ def get_pokemon():
         if entry["language"]["name"] == "en"
     ]
 
-    # Initialize the list of given Pokemon if it doesn't exist in session state
-    if "given_pokemon_list" not in st.session_state:
-        st.session_state.given_pokemon_list = []
-    # Add the current Pokemon ID to the list to avoid repeats
-    st.session_state.given_pokemon_list.append(random_pokemon_id)
+    # Initialize the list if it doesn't exist
+    if "given_pokemons" not in st.session_state:
+        st.session_state.given_pokemons = []
+        get_all_pokemon_names()
+    # Add the current Pokemon as a dictionary
+    st.session_state.given_pokemons.append({
+        "id": random_pokemon_id,
+        "img_url": pokemon_img_url,
+        "name": pokemon_name
+    })
 
-    # Return the image URL, name, and descriptions for the selected Pokémon
     return pokemon_img_url, pokemon_name, descriptions
+
+
+def get_all_pokemon_names():
+    url = "https://pokeapi.co/api/v2/pokemon?limit=151"
+    response = requests.get(url).json()
+
+    # Extract pokemon names
+    pokemon_names = [pokemon["name"] for pokemon in response["results"]]
+    st.session_state.all_pokemon_names = pokemon_names
