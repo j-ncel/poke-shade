@@ -24,10 +24,14 @@ Players are shown a masked silhouette of a random Pokémon and must guess its na
 ```
 pokeshade/
 │
-├── main.py              # Streamlit app and UI logic
-├── pokemon_fetcher.py   # Functions for fetching Pokemon data (Name and Image URL) and hints
-├── image_masker.py      # Functions for masking Pokemon images
-└── README.md            # This file
+├── main.py              # Streamlit UI and game logic.
+├── pokemon_fetcher.py   # Fetches Pokémon data (name, image, hints) from PokéAPI.
+├── image_masker.py      # Masked image from Pokémon image.
+├── sample_image/        # Sample images of the
+│   ├── 1.png
+│   ├── 2.png
+│   └── 3.png
+└── README.md            # Project documentation
 ```
 
 ---
