@@ -173,6 +173,7 @@ def check_answer(guess, result_placeholder, whos_that, pokemon_img_placeholder, 
     pokemon_img_placeholder.image(pokemon_orig_img, width=500)
     # Remove current Pokemon from session and rerun for a new round
     del st.session_state.pokemon_name
+    time.sleep(1)
     st.rerun()
 
 
