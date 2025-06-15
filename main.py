@@ -152,6 +152,11 @@ def main():
                     if not st.session_state.get("guessed", False):
                         check_answer(choices[3], result_placeholder, whos_that,
                                      pokemon_img_placeholder, pokemon_orig_img)
+        st.markdown("""
+        <a href="https://coff.ee/jncel" target="_blank">
+            <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" width="170">
+        </a>
+        """, unsafe_allow_html=True)
 
 
 def check_answer(guess, result_placeholder, whos_that, pokemon_img_placeholder, pokemon_orig_img):
