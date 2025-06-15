@@ -1,3 +1,8 @@
+<a href="https://coff.ee/jncel">
+  <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" width="170" height="" alt="Buy Me a Coffee">
+</a>
+
+
 # PokeShade
 
 A fun "Who's That Pokémon?" guessing game built with Streamlit.  
